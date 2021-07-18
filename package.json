@@ -4,7 +4,7 @@
   "description": "Team Profile Generator that generates profiles for different team members",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/NiniSidhu/Team-Profile-Generator/issues"
   },
-  "homepage": "https://github.com/NiniSidhu/Team-Profile-Generator#readme"
+  "homepage": "https://github.com/NiniSidhu/Team-Profile-Generator#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
 }
