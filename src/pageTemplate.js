@@ -1,8 +1,8 @@
 const createManager = managerArrays => {
     return `
         
-        <div>
-            <div class = "card col-3"> 
+        <div class="col-3">
+            <div class = "card "> 
                 
                 
                     ${managerArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, officeNumber }) => {
@@ -32,9 +32,9 @@ const createManager = managerArrays => {
 const createEngineer = engineerArrays => {
     return `
         
-        <div>
-            <div class = "card col-3"> 
-               
+        <div class="col-3">
+            <div class = "card"> 
+                
                     ${engineerArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, gitHubId }) => {
                         return `
                         <div class="card-title">
@@ -46,13 +46,13 @@ const createEngineer = engineerArrays => {
                                 <ul>
                                     <li> ID: ${employeeId}</li>
                                     <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
-                                    <li> GitHub ID: <a href="https://github.com/${gitHubId}">${gitHubId}</li>
+                                    <li> GitHub ID: <a href="https://github.com/${gitHubId}"></a>${gitHubId}</li>
                                 </ul>
                             </div>
                         </div>`;
                     })
                 
-                .join('')}        
+                }        
                 
             </div>
         </div>
@@ -62,8 +62,8 @@ const createEngineer = engineerArrays => {
 const createIntern = internArrays => {
     return `
         
-        <div>
-            <div class = "card col-3"> 
+        <div class="col-3">
+            <div class = "card"> 
                 
                     ${internArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, internSchool }) => {
                         return `
@@ -82,7 +82,7 @@ const createIntern = internArrays => {
                         </div>`;
                     })
                 
-                .join('')}        
+                }        
                 
             </div>
         </div>
@@ -123,10 +123,11 @@ module.exports = teamMates => {
             <h1>My Team</h1>
         </header>
         <main class="container">
-            <div class="row"></div>
-            ${createManager(managers)}
-            ${createEngineer(engineers)}
-            ${createIntern(interns)}
+            <div class="row">
+                ${createManager(managers)}
+                ${createEngineer(engineers)}
+                ${createIntern(interns)}
+            </div>
         </main>
     </body>
     </html>
