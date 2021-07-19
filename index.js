@@ -8,6 +8,8 @@ const Manager = require('../Team-Profile-Generator/lib/Manager');
 const Engineer = require('../Team-Profile-Generator/lib/Engineer');
 const Intern = require('../Team-Profile-Generator/lib/Intern');
 const Employee = require('../Team-Profile-Generator/lib/Employee');
+const siteGenerator = require('../Team-Profile-Generator/src/pageTemplate');
+const { writeFile, copyFile } = require('../Team-Profile-Generator/utlities/siteGenerator');
 
 const teamMates = [];
 
@@ -72,7 +74,7 @@ const initiateApp = () => {
                         return false; 
                     }
                 }
-            }
+            },
         ])
             .then(answers => {
                 const manager = new Manager(answers.managerName, answers.id, answers.managerEmail, answers.officeNumber);
@@ -142,10 +144,10 @@ const initiateApp = () => {
                         return false; 
                     }
                 }
-            }
+            },
         ])
             .then(answers => {
-                const manager = new Engineer(answers.engineerName, answers.id, answers.engineerEmail, answers.gitHubId);
+                const engineer = new Engineer(answers.engineerName, answers.id, answers.engineerEmail, answers.gitHubId);
                 teamMates.push(engineer);
 
                 createNewTeamMate(); 
@@ -212,10 +214,10 @@ const initiateApp = () => {
                         return false; 
                     }
                 }
-            }
+            },
         ])
             .then(answers => {
-                const manager = new Intern(answers.internName, answers.id, answers.internEmail, answers.schoolName);
+                const intern = new Intern(answers.internName, answers.id, answers.internEmail, answers.schoolName);
                 teamMates.push(intern);
 
                 createNewTeamMate(); 
@@ -227,8 +229,9 @@ const initiateApp = () => {
         return inquirer.prompt([
             {
                 type:'list',
+                name:'teamMenu',
                 message: 'Please select Generate Team Profile to genereate or add additional members.',
-                choices: ['Enngineer', 'Intern', 'Generate Team Profile'],
+                choices: ['Engineer', 'Intern', 'Generate Team Profile'],
             }
         ])
 
@@ -241,9 +244,9 @@ const initiateApp = () => {
             }
             else{
                 const landingPage = siteGenerator(teamMates);
-                fs.writeFile(landingPage);
+                writeFile(landingPage);
                 console.log('Your Landing Page has been generate. Please check the DIR folder.');
-                fs.copyFile(); 
+                copyFile(); 
                 console.log('Your stylesheet has been successfully merged.');
             }
         })

@@ -6,7 +6,7 @@ test ('Create a Manager Object', () => {
     expect(manager.employeeName).toEqual(expect.any(String));
     expect(manager.employeeId).toEqual(expect.any(String));
     expect(manager.employeeEmail).toEqual(expect.stringContaining('@'));
-    expect(manager.employeeOfficeNumber).toEqual(expect.any(String));
+    // expect(manager.employeeOfficeNumber).toEqual(expect.any(String));
 
 });
 

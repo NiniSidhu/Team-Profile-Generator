@@ -13,7 +13,7 @@ test ('Create a Engineer Object', () => {
 test("Get engineer's GitHub ID", () =>{
     const engineer = new Engineer('Engineer', '03', 'engineer@engineeremail.com', 'GitHubId')
     
-    expect(engineer.getGitHubId()).toEqual(expect.any(String));
+    expect(engineer.getGitHub()).toEqual(expect.any(String));
 });
 
 test("Get intern's role", () => {
