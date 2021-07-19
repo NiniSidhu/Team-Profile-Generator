@@ -1,24 +1,29 @@
 const createManager = managerArrays => {
     return `
         
-        <div class = "row">
-            <div class = "card col-2"> 
-                <h2 class="card-title"> Manager</h2>
-                <div class = "card-body">
+        <div>
+            <div class = "card col-3"> 
+                
+                
                     ${managerArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, officeNumber }) => {
                         return `
-                        <h3 class = "card-title"> ${employeeName} <span>(${employeeRole})</span></h3> 
-                        <div class = "card-text"> 
-                            <ul>
-                                <li> ID: ${employeeId}</li>
-                                <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
-                                <li> Office Number: ${officeNumber}</li>
-                            </ul>
+                        <div class="card-title">
+                            <h2> ${employeeRole}</h2>
+                            <h3> ${employeeName}</h3>
+                        </div> 
+                        <div class = "card-body">
+                            <div class = "card-text"> 
+                                <ul>
+                                    <li> ID: ${employeeId}</li>
+                                    <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
+                                    <li> Office Number: ${officeNumber}</li>
+                                </ul>
+                            </div>
                         </div>`;
                     })
                 
                 }        
-                </div>
+                
             </div>
         </div>
     `
@@ -27,24 +32,28 @@ const createManager = managerArrays => {
 const createEngineer = engineerArrays => {
     return `
         
-        <div class = "row">
-            <div class = "card col-2"> 
-                <h2 class="card-title"> Engineer</h2>
-                <div class = "card-body">
+        <div>
+            <div class = "card col-3"> 
+               
                     ${engineerArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, gitHubId }) => {
                         return `
-                        <h3 class = "card-title"> ${employeeName} <span>(${employeeRole})</span></h3> 
-                        <div class = "card-text"> 
-                            <ul>
-                                <li> ID: ${employeeId}</li>
-                                <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
-                                <li> GitHub ID: <a href="https://github.com/${gitHubId}">${gitHubId}</li>
-                            </ul>
+                        <div class="card-title">
+                            <h2> ${employeeRole}</h2>
+                            <h3> ${employeeName}</h3>
+                        </div> 
+                        <div class = "card-body"> 
+                            <div class = "card-text"> 
+                                <ul>
+                                    <li> ID: ${employeeId}</li>
+                                    <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
+                                    <li> GitHub ID: <a href="https://github.com/${gitHubId}">${gitHubId}</li>
+                                </ul>
+                            </div>
                         </div>`;
                     })
                 
-                }        
-                </div>
+                .join('')}        
+                
             </div>
         </div>
     `
@@ -53,24 +62,28 @@ const createEngineer = engineerArrays => {
 const createIntern = internArrays => {
     return `
         
-        <div class = "row">
-            <div class = "card col-2"> 
-                <h2 class="card-title"> Intern</h2>
-                <div class = "card-body">
+        <div>
+            <div class = "card col-3"> 
+                
                     ${internArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, internSchool }) => {
                         return `
-                        <h3 class = "card-title"> ${employeeName} <span>(${employeeRole})</span></h3> 
-                        <div class = "card-text"> 
-                            <ul>
-                                <li> ID: ${employeeId}</li>
-                                <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
-                                <li> School:${internSchool}</li>
-                            </ul>
+                        <div class="card-title">
+                            <h2> ${employeeRole}</h2>
+                            <h3> ${employeeName}</h3>
+                        </div>
+                        <div class = "card-body"> 
+                            <div class = "card-text"> 
+                                <ul>
+                                    <li> ID: ${employeeId}</li>
+                                    <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
+                                    <li> School: ${internSchool}</li>
+                                </ul>
+                            </div>
                         </div>`;
                     })
                 
-                }        
-                </div>
+                .join('')}        
+                
             </div>
         </div>
     `
@@ -110,6 +123,7 @@ module.exports = teamMates => {
             <h1>My Team</h1>
         </header>
         <main class="container">
+            <div class="row"></div>
             ${createManager(managers)}
             ${createEngineer(engineers)}
             ${createIntern(interns)}

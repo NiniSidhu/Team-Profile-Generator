@@ -7,3 +7,15 @@ header h1{
     display: flex;
     justify-content: center;
 }
+
+.card{
+    margin-right:0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.card-title{
+    background-color: blue;
+    color: white; 
+}
