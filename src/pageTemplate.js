@@ -8,7 +8,7 @@ const createManager = managerArrays => {
                     ${managerArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, officeNumber }) => {
                         return `
                         <div class="card-title">
-                            <h2> ${employeeRole}</h2>
+                            <h2> ${employeeRole} <i class="material-icons">free_breakfast</i></h2>
                             <h3> ${employeeName}</h3>
                         </div> 
                         <div class = "card-body">
@@ -38,7 +38,7 @@ const createEngineer = engineerArrays => {
                     ${engineerArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, gitHubId }) => {
                         return `
                         <div class="card-title">
-                            <h2> ${employeeRole}</h2>
+                            <h2> ${employeeRole} <i class="material-icons">build</i> </h2>
                             <h3> ${employeeName}</h3>
                         </div> 
                         <div class = "card-body"> 
@@ -46,7 +46,7 @@ const createEngineer = engineerArrays => {
                                 <ul>
                                     <li> ID: ${employeeId}</li>
                                     <li> Email: <a href="mailto:${employeeEmail}">${employeeEmail}</a></li>
-                                    <li> GitHub ID: <a href="https://github.com/${gitHubId}"></a>${gitHubId}</li>
+                                    <li> GitHub ID: <a href="https://github.com/${gitHubId}">${gitHubId}</a></li>
                                 </ul>
                             </div>
                         </div>`;
@@ -68,7 +68,7 @@ const createIntern = internArrays => {
                     ${internArrays.map(({employeeName, employeeId, employeeEmail, employeeRole, internSchool }) => {
                         return `
                         <div class="card-title">
-                            <h2> ${employeeRole}</h2>
+                            <h2> ${employeeRole}   <i class="material-icons">school</i> </h2>
                             <h3> ${employeeName}</h3>
                         </div>
                         <div class = "card-body"> 
@@ -115,6 +115,7 @@ module.exports = teamMates => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="style.css">
         <title>Team Profile Generator</title>
     </head>
