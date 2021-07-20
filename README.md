@@ -1,6 +1,6 @@
 # Team-Profile-Generator
 ## Author: Nayandeep Sidhu
-## GitHub Deployment Link:
+## GitHub Deployment Link: https://ninisidhu.github.io/Team-Profile-Generator/
 ## Userinterface Walkthrough: https://drive.google.com/file/d/1V0J7Rh2-ZM0nQLE5PNm_JDlfhrhvkevL/view
 
 ### Description: This is a Team Profile Generator. The purpose of this project is to input the roles of team members along with other credentials and the application outputs the corresponding information in a tabular form as desplayed by the image below. 
